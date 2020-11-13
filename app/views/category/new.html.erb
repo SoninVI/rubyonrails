@@ -1,0 +1,14 @@
+<h1>Добавить категорию</h1>
+
+<%= form_for @category , url: category_path do |f| %>
+  <p> name <%= f.text_field :name %><br /></p>
+  <p> url <%= f.text_field :url %><br /></p>
+  <p> title<%= f.text_field :title %><br /></p>
+  <p> keywords<%= f.text_field :keywords %><br /></p>
+
+
+
+
+
+  <%= f.submit "save"%>
+<% end %>

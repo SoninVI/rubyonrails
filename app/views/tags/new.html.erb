@@ -1,0 +1,13 @@
+<h1>Добавить teg</h1>
+
+<%= form_for @tag, url: tags_path do |f| %>
+  <p> name <%= f.text_field :name %><br /></p>
+  <p> teg <%= f.text_field :article_id %><br /></p>
+
+
+
+
+
+
+  <%= f.submit "save"%>
+<% end %>

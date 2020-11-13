@@ -1,0 +1,18 @@
+<h1>Comment</h1>
+
+<%= link_to 'new Comment', comments_new_path %>,
+
+<br>
+
+
+<p>Все comments</p>
+
+<%- @comments.each do |comment| %>
+
+  <%= link_to comment.name, comment_show_path(comment.id) %>
+
+  <br>
+
+
+
+<%- end %>

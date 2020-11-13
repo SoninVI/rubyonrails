@@ -1,0 +1,15 @@
+<h1>Edit comment</h1>
+
+<%= form_for @comment , url: comment_update_path do |f| %>
+  <p> name <%= f.text_field :name %><br /></p>
+  <p> url <%= f.text_field :email %><br /></p>
+  <p> url <%= f.text_field :text %><br /></p>
+
+
+
+
+
+
+
+  <%= f.submit "save"%>
+<% end %>

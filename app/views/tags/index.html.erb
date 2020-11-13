@@ -1,0 +1,18 @@
+<h1>Tegs</h1>
+
+<%= link_to 'new tags', tags_new_path %>,
+
+<br>
+
+
+<p>Все tags</p>
+
+<%- @tags.each do |tag| %>
+
+  <%= link_to tag.name, tag_show_path(tag.id) %>
+
+  <br>
+
+
+
+<%- end %>

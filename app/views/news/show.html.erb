@@ -1,0 +1,5 @@
+<%= @new.name %>
+
+
+<%= link_to 'edit',   news_edit_path(@new.id)%>
+<%= link_to 'delete',   new_delete_path(@new.id), method: :delete, data: { confirm: 'Delete?'}%>

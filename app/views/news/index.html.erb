@@ -1,0 +1,18 @@
+<h1>новости</h1>
+
+<%= link_to 'new news', news_new_path %>,
+
+<br>
+
+
+<p>Все новости</p>
+
+<%- @news.each do |new| %>
+
+  <%= link_to new.name, news_show_path(new.id) %>
+
+  <br>
+
+
+
+<%- end %>

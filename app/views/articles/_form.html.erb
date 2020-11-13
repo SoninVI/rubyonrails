@@ -1,0 +1,23 @@
+<pre> <%= p @article.to_json %></pre>
+<pre> <%= p @article.errors.to_json %></pre>
+
+
+
+<% if @article.errors.any? %>
+  <div class="errors">
+    <h4><%= pluralize(@article.errors.count, "error") %></h4>
+    <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+        <% end %>
+    </ul>
+  </div>
+  <%end %>
+
+<%= form_for @article , url: @article.new_record?  ? article_path : article_update_path(@article.id) do |f| %>
+  <p> name <%= f.text_field :name %><br /></p>
+  <p> url <%= f.text_field :url %><br /></p>
+  <p> title<%= f.text_field :text %><br /></p>
+
+  <%= f.submit "save"%>
+<% end %>

@@ -1,0 +1,5 @@
+<%= @tag.name %>
+<%= @tag.article_id %>
+
+<%= link_to 'edit',   tags_edit_path(@tag.id)%>
+<%= link_to 'delete',  tags_delete_path(@tag.id), method: :delete, data: { confirm: 'Delete?'}%>

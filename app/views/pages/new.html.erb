@@ -1,0 +1,17 @@
+<h1>Добавить страницу</h1>
+
+<%= form_for :page , url: page_path do |f| %>
+  <p> name <%= f.text_field :name %><br /></p>
+  <p> url <%= f.text_field :url %><br /></p>
+  <p> content<%= f.text_area :content %><br /></p>
+  <p> title<%= f.text_field :title %><br /></p>
+  <p> keywords<%= f.text_field :keywords %><br /></p>
+  <p> disc<%= f.text_field :disc %><br /></p>
+  <p> active<%= f.check_box :active %><br /></p>
+  <p> text<%= f.text_area :text %><br /></p>
+
+
+
+
+  <%= f.submit "save"%>
+<% end %>

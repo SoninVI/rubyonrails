@@ -1,0 +1,13 @@
+<h1>edit teg</h1>
+
+<%= form_for @tag , url: tags_update_path(@tag.id) do |f| %>
+  <p> name <%= f.text_field :name %><br /></p>
+  <p> teg <%= f.text_field :article_id %><br /></p>
+
+
+
+
+
+
+  <%= f.submit "save"%>
+<% end %>

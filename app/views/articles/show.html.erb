@@ -1,0 +1,6 @@
+<%= @article.name %>
+<%= @article.url %>
+<%= @article.text %>
+
+<%= link_to 'edit',   articles_edit_path(@article.id)%>
+<%= link_to 'delete',   article_delete_path(@article.id), method: :delete, data: { confirm: 'Delete?'}%>

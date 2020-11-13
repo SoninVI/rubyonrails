@@ -1,0 +1,18 @@
+<h1>Страницы</h1>
+
+<%= link_to 'new pages', page_new_path %>,
+
+<br>
+
+
+<p>Все новости</p>
+
+<%- @pages.each do |page| %>
+
+  <%= link_to page.name, pages_show_path(page.id) %>
+
+  <br>
+
+
+
+<%- end %>

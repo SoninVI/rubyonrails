@@ -1,0 +1,9 @@
+<%= @comment.name %>
+<%= @comment.text %>
+<%= @comment.email %>
+
+<%- p "!!!!!!!!!!!!" %>
+<%- p @comment.to_json %>
+
+<%= link_to 'edit',   comment_edit_path(@comment.id)%>
+<%= link_to 'delete',   comment_delete_path(@comment.id), method: :delete, data: { confirm: 'Delete?'}%>

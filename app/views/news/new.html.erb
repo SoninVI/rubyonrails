@@ -1,0 +1,15 @@
+<h1>Добавить новость</h1>
+
+<%= form_for @new , url: new_path do |f| %>
+  <p> name <%= f.text_field :name %><br /></p>
+  <p> url <%= f.text_field :url %><br /></p>
+  <p> content<%= f.text_area :content %><br /></p>
+  <p> title<%= f.text_field :title %><br /></p>
+  <p> keywords<%= f.text_field :keywords %><br /></p>
+  <p> active<%= f.check_box :active %><br /></p>
+
+
+
+
+  <%= f.submit "save"%>
+<% end %>
