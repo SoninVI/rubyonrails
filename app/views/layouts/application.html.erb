@@ -8,7 +8,20 @@
 </head>
 <body>
 <%= render 'home/menu' %>
+<div class="wrapper">
+  <h1 class="main-title">THREEZINE</h1>
+  <div class="navigate">
+    <ul class="navigate-menu">
+      <li><a <%= link_to "pages", pages_path %></a></li>
+      <li><a <%= link_to "news", news_path %></a></li>
+      <li><a <%= link_to "categoryes", category_path %></a></li>
+      <li><a <%= link_to "articles", articles_path %></li>
+      <li><a <%= link_to "tags", tags_path %></a></li>
+      <li><a <%= link_to "comments", comments_path %></a></li>
+    </ul>
+  </div>
 <%= yield %>
+</div>
 
 </body>
 </html>

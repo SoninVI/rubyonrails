@@ -14,10 +14,16 @@
   </div>
   <%end %>
 
-<%= form_for @article , url: @article.new_record?  ? article_path : article_update_path(@article.id) do |f| %>
-  <p> name <%= f.text_field :name %><br /></p>
-  <p> url <%= f.text_field :url %><br /></p>
-  <p> title<%= f.text_field :text %><br /></p>
 
-  <%= f.submit "save"%>
-<% end %>
+    <%= form_for @article , url: @article.new_record?  ? article_path : article_update_path(@article.url) do |f| %>
+
+      <p> name  <%= f.text_field :name %><br /></p>
+      <p> url   <%= f.text_field  :url %><br /></p>
+      <p> title <%= f.text_field :text %><br /></p>
+
+      <%= f.submit "save"%>
+    <% end %>
+
+
+
+

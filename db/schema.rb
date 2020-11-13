@@ -35,9 +35,9 @@ ActiveRecord::Schema.define(version: 20201111150917) do
     t.text     "name"
     t.text     "email"
     t.text     "text"
-    t.string   "article_idinteger"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.integer  "article_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "news", force: :cascade do |t|

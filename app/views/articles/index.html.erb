@@ -9,7 +9,7 @@
 
 <%- @articles.each do |article| %>
 
-  <%= link_to article.name, article_show_path(article.id) %>
+  <%= link_to article.name, article_show_path(article.url) %>
 
   <br>
 

@@ -2,5 +2,33 @@
 <%= @article.url %>
 <%= @article.text %>
 
-<%= link_to 'edit',   articles_edit_path(@article.id)%>
-<%= link_to 'delete',   article_delete_path(@article.id), method: :delete, data: { confirm: 'Delete?'}%>
+<% tags=@article.tags %>
+<% if tags.any?  %>
+
+<div class="tags">
+  <h2>tags</h2>
+
+  <table class="table">
+    <thead>
+     <th>name</th>
+     <th>date</th>
+    </thead>
+
+  <tbody>
+  <% @article.tags.each do |tag| %>
+  <tr>
+    <td><%= tag.name %></td>
+    <td><%= tag.created_at.strftime('%H:%M  %e %B %Y') %></td>
+  </tr>
+  <% end %>
+  </tbody>
+  </table>
+
+</div>
+
+  <% end %>
+
+
+
+<%= link_to 'edit',   articles_edit_path(@article.url)%>
+<%= link_to 'delete',   article_delete_path(@article.url), method: :delete, data: { confirm: 'Delete?'}%>

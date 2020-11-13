@@ -36,11 +36,11 @@ Rails.application.routes.draw do
   get 'article' => 'articles#index', as: 'articles'
   get 'articles_new' => 'articles#new', as: 'articles_new'
   post 'article' => 'articles#create', as: 'article'
-  get 'article_show' => 'articles#show', as: 'articles_show'
-  get 'articles/:id' => 'articles#show', as: 'article_show'
-  get 'articles/:id/edit' => 'articles#edit', as: 'articles_edit'
-  patch 'article/:id/update' => 'articles#update', as: 'article_update'
-  delete 'article/:id/delete' => 'articles#destroy', as: 'article_delete'
+  # get 'article_show' => 'articles#show', as: 'articles_show'
+  get 'articles/:url' => 'articles#show', as: 'article_show'
+  get 'articles/:url/edit' => 'articles#edit', as: 'articles_edit'
+  patch 'article/:url/update' => 'articles#update', as: 'article_update'
+  delete 'article/:url/delete' => 'articles#destroy', as: 'article_delete'
   delete 'articles/' => 'articles#destroy_all', as: 'article_delete_all'
 
   get 'tag' => 'tags#index', as: 'tags'
@@ -61,7 +61,7 @@ Rails.application.routes.draw do
   patch 'comments/:id/update' => 'comments#update', as: 'comment_update'
   delete 'comments/:id/delete' => 'comments#destroy', as: 'comment_delete'
 
-
+  # get '/:article_slug/:url_slug' => 'article#show'
 
 
 end

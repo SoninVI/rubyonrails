@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find_by_id(params[:id])
+    @article = Article.find_by_url(params[:url])
   end
 
   def new
@@ -22,11 +22,11 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find_by_id(params[:id])
+    @article = Article.find_by_url(params[:url])
   end
 
   def update
-    @article = Article.find_by_id(params[:id])
+    @article = Article.find_by_url(params[:url])
     if @article.update(article_params)
       redirect_to article_path
     else
@@ -36,7 +36,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.find_by_id(params[:id])
+    @article = Article.find_by_url(params[:url])
     @article.destroy
     redirect_to article_path
   end
