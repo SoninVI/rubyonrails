@@ -41,6 +41,15 @@ class TagsController < ApplicationController
     redirect_to tags_path
   end
 
+  def arcticle_tags
+    article = Article.find_by_id(params[:article_id])
+    @tags = article.tags.new(tag_params)
+    if @tags.save
+      redirect_to   article_show_path(article.url)
+    else
+      render :tags
+    end
+  end
 
 
 

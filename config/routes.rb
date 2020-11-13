@@ -63,5 +63,6 @@ Rails.application.routes.draw do
 
   # get '/:article_slug/:url_slug' => 'article#show'
 
-
+  # article_tags_path
+  post "articles/:article_id/tags" => "tags#arcticle_tags", as: 'article_tags'
 end

@@ -3,6 +3,7 @@
 <%= @article.text %>
 
 <% tags=@article.tags %>
+
 <% if tags.any?  %>
 
 <div class="tags">
@@ -14,14 +15,14 @@
      <th>date</th>
     </thead>
 
-  <tbody>
-  <% @article.tags.each do |tag| %>
-  <tr>
-    <td><%= tag.name %></td>
-    <td><%= tag.created_at.strftime('%H:%M  %e %B %Y') %></td>
-  </tr>
-  <% end %>
-  </tbody>
+    <tbody>
+      <% @article.tags.each do |tag| %>
+      <tr>
+        <td><%= tag.name %></td>
+        <td><%= tag.created_at.strftime('%H:%M  %e %B %Y') %></td>
+      </tr>
+      <% end %>
+    </tbody>
   </table>
 
 </div>
@@ -32,3 +33,12 @@
 
 <%= link_to 'edit',   articles_edit_path(@article.url)%>
 <%= link_to 'delete',   article_delete_path(@article.url), method: :delete, data: { confirm: 'Delete?'}%>
+
+<div class="new_tag">
+  <%= form_for([@article, @article.tags.build]) do |f|%>
+    <p> name <%= f.text_field :name %><br /></p>
+
+    <br>
+    <%= f.submit "save"%>
+  <% end %>
+</div>
