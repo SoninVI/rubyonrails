@@ -13,6 +13,7 @@ class NewsController < ApplicationController
 
   def create
     @news = New.new(new_params)
+
     if @news.save
       redirect_to new_path
     else

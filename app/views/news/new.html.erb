@@ -5,11 +5,12 @@
   <p> url <%= f.text_field :url %><br /></p>
   <p> content<%= f.text_area :content %><br /></p>
   <p> title<%= f.text_field :title %><br /></p>
+
+  <p>tags</p>
+  <p><%= f.select :news_tag_ids, options_from_collection_for_select(NewsTag.all, :id, :name) %></p>
+
+
   <p> keywords<%= f.text_field :keywords %><br /></p>
   <p> active<%= f.check_box :active %><br /></p>
-
-
-
-
   <%= f.submit "save"%>
 <% end %>

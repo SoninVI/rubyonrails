@@ -2,24 +2,44 @@
 <%= @article.url %>
 <%= @article.text %>
 
-<% tags=@article.tags %>
 
-<% if tags.any?  %>
 
-<div class="tags">
-  <h2>tags</h2>
+<br>
+<br>
+<br>
+<%= form_for @article.build_additional_photo, url: additional_photos_create_path(@article.url) do |f|%>
+
+  <p> image <%= f.text_field :image %><br /></p>
+  <p> alt <%= f.text_field :alt %><br /></p>
+   <br>
+  <%= f.submit "save"%>
+
+<% end %>
+
+<% comments=@article.comments %>
+
+<%=  comments.to_json%>
+
+<% if comments.any?  %>
+
+<div class="comment">
+  <h2 class="text-center">comment</h2>
 
   <table class="table">
     <thead>
      <th>name</th>
+     <th>email</th>
+     <th>text</th>
      <th>date</th>
     </thead>
 
     <tbody>
-      <% @article.tags.each do |tag| %>
+      <% comments.each do |comment| %>
       <tr>
-        <td><%= tag.name %></td>
-        <td><%= tag.created_at.strftime('%H:%M  %e %B %Y') %></td>
+        <td><%= comment.name %></td>
+        <td><%= comment.email %></td>
+        <td><%= comment.text %></td>
+        <td><%= comment.created_at.strftime('%H:%M  %e %B %Y') %></td>
       </tr>
       <% end %>
     </tbody>
@@ -31,14 +51,22 @@
 
 
 
+
+
 <%= link_to 'edit',   articles_edit_path(@article.url)%>
 <%= link_to 'delete',   article_delete_path(@article.url), method: :delete, data: { confirm: 'Delete?'}%>
 
-<div class="new_tag">
-  <%= form_for([@article, @article.tags.build]) do |f|%>
+<div class="new_comments">
+  <%= form_for([@article, @article.comments.build]) do |f|%>
     <p> name <%= f.text_field :name %><br /></p>
+    <p> email <%= f.text_field :email %><br /></p>
+    <p> text <%= f.text_field :text %><br /></p>
 
     <br>
     <%= f.submit "save"%>
   <% end %>
 </div>
+
+<%= link_to 'back'%>
+
+

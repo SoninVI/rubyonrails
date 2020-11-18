@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'home#index'
 
   # get 'home/news'
@@ -64,5 +65,18 @@ Rails.application.routes.draw do
   # get '/:article_slug/:url_slug' => 'article#show'
 
   # article_tags_path
-  post "articles/:article_id/tags" => "tags#arcticle_tags", as: 'article_tags'
+  post "articles/:article_id/comments" => "comments#arcticle_comments", as: 'article_comments'
+  post "articles/:article_url/additional_photos/" => "additional_photos#create", as: 'additional_photos_create'
+
+  get "news_tags", to: "news_tags#index", as: 'news_tags'
+  get "news_tags/new", to: "news_tags#new", as: 'news_tags_new'
+  post "news_tags", to: "news_tags#create", as: 'news_tags_create'
+  # get 'additional_photos/index'
+  # get 'additional_photos/show'
+  # get 'additional_photos/new'
+  # get 'additional_photos/create'
+  # get 'additional_photos/edit'
+  # get 'additional_photos/update'
+  # get 'additional_photos/destroy'
+
 end

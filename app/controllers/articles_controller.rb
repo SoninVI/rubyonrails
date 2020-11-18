@@ -37,7 +37,9 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find_by_url(params[:url])
-    @article.destroy
+    @comment = @article.comments(params[:article_url])
+    @comment.destroy
+
     redirect_to article_path
   end
 

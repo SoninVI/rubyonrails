@@ -1,0 +1,8 @@
+<h1>NEWS TAGS</h1>
+
+<% @news_tags.each do |nt| %>
+  <p class="tag_name">Tag name: <%= nt.name %> </p>
+  <p class="tag_name">Tag description: <%= nt.description %> </p>
+<% end %>
+
+<%= link_to "new tag",  news_tags_new_path %>

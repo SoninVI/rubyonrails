@@ -5,6 +5,9 @@
   <p> url <%= f.text_field :url %><br /></p>
   <p> content<%= f.text_area :content %><br /></p>
   <p> title<%= f.text_field :title %><br /></p>
+
+  <p>tags><%= f.select :tag_ids, options_from_collection_for_select(Tag.all, :id, :name), {}, {:multiple => true } %></p>
+
   <p> keywords<%= f.text_field :keywords %><br /></p>
   <p> disc<%= f.text_field :disc %><br /></p>
   <p> active<%= f.check_box :active %><br /></p>

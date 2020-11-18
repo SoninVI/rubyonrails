@@ -1,0 +1,12 @@
+<h3>New teg new</h3>
+
+<%= form_for @news_tag , url:  news_tags_create_path do |f| %>
+  <p> name <%= f.text_field :name %><br /></p>
+  <p> description <%= f.text_field :description %><br /></p>
+
+
+
+
+
+  <%= f.submit "save"%>
+<% end %>

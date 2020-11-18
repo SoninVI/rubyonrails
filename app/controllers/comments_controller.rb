@@ -42,9 +42,22 @@ class CommentsController < ApplicationController
     redirect_to comment_path
   end
 
+
+
+
+  def arcticle_comments
+    article = Article.find_by_id(params[:article_id])
+    @comments = article.comments.new(comment_params)
+    if @comments.save
+      redirect_to   article_show_path(article.url)
+    else
+      render :tags
+    end
+  end
+
   private
   def comment_params
-    params.require(:comment).permit(:name, :article_id)
+    params.require(:comment).permit(:name, :email, :text, :article_id)
   end
 
 

@@ -1,6 +1,8 @@
 class Article < ActiveRecord::Base
 
   has_many :tags
+  has_many :comments, dependent: :destroy
+  has_one :additional_photo, dependent: :destroy
 
 
   validates :name, :url,  presence: true

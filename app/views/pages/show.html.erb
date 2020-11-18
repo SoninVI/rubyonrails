@@ -7,5 +7,11 @@
 <%= @page.text %>
 <%= @page.active %>
 
+<br>
+<% @page.tags.each do |tag| %>
+  <span><%= tag.name %> !!!!!!!!</span>
+  <%= "Tag: #{tag.name}" %>
+<% end %>
+
 <%= link_to 'edit',   pages_edit_path(@page.id)%>
 <%= link_to 'delete',   page_delete_path(@page.id), method: :delete, data: { confirm: 'Delete?'}%>
